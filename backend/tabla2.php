@@ -91,7 +91,7 @@ if ($_SESSION['Usuario'] != 'admin') {
     echo "</table><br><br>";
 
     if (count($campo)) {
-      echo '<form action= "tabla5.php" method="post">
+      echo '<form action= "tabla2.php" method="post">
  Usuario:<br>
   <input type="text" name="Usuario" value="' . $campo["Usuario"] . '">
   <br>
