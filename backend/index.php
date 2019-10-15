@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<html>
 <?php
 /*
 session_start();
@@ -7,9 +8,6 @@ if(@!$_SESSION['Usuario']){
 }
 */
 ?>
-
-<!DOCTYPE HTML>
-<html>
 
 <head>
 	<title>Caracas Ciudad Plural</title>
@@ -22,7 +20,7 @@ if(@!$_SESSION['Usuario']){
 	<a href="logout.php">Cerrar Sesion</a><br><br>
 
 	<?php
-	include("conn.php");
+	/*include("conn.php");
 
 	$sql = "SELECT salio FROM tickets WHERE salio = 0;";
 
@@ -32,21 +30,20 @@ if(@!$_SESSION['Usuario']){
 
 	echo  "Carros adentro: $carrosdentro<br>";
 
-	$conn->close();
+	$conn->close();*/
 	?>
 
-	<a href="tabla1.php">Feed</a>
-	<a href="tabla2.php">Equipos</a>
-	<a href="tabla3.php">Tarifas</a>
-	<a href="tabla4.php">Transacciones</a>
-	<a href="tabla6.php">Puestos fijos</a>
+	<a href="tabla1.php">News</a>
+	<a href="tabla2.php">Audios</a>
+	<a href="tabla3.php">Flyers</a>
+
 
 
 	<?php
 
 	if ($_SESSION['Access'] == 1) {
 
-		echo "<a href=\"tabla5.php\">Usuarios</a>";
+		echo "<a href=\"tabla4.php\">Users</a>";
 	}
 
 	?>
