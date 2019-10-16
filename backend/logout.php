@@ -1,12 +1,9 @@
 <?php
 
 session_start();
-if($_SESSION['Usuario']){
+if ($_SESSION['Usuario']) {
 	session_destroy();
 	header("location:login.php");
-}
-else{
+} else {
 	header("location:login.php");
 }
-
-?>

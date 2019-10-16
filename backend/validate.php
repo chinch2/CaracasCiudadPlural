@@ -17,7 +17,7 @@ if ($username == 'admin') {
 				$_SESSION['Usuario'] = $row['user'];
 				$_SESSION['Access'] = $row['access_level'];
 				echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
-				echo "<script>location.href='index.php'</script>";
+				echo "<script>location.href='tablas.php'</script>";
 			} else {
 				echo '<script>alert("Los Datos ingresados no son los correctos")</script> ';
 				echo "<script>location.href='login.php'</script>";
@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
 			$_SESSION['Usuario'] = $row['user'];
 			$_SESSION['Access'] = $row['access_level'];
 			echo '<script>alert("BIENVENIDO SUPERVISOR")</script> ';
-			echo "<script>location.href='index.php'</script>";
+			echo "<script>location.href='tablas.php'</script>";
 		}
 	}
 } else {

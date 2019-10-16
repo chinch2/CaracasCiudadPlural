@@ -61,7 +61,7 @@ if ($_SESSION['Usuario'] != 'admin') {
     }
   }
   ?>
-  <a href="index.php">Inicio</a>
+  <a href="tablas.php">Volver</a>
   <table border="1">
     <tr>
       <th>Usuario</th>
