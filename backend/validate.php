@@ -11,7 +11,7 @@ $pass = $_POST['pass'];
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
-			if ($pass == $row['password']) {
+			if ($pass == $row['password'] && $username == $row['user']) {
 				$_SESSION['ID'] = $row['id'];
 				$_SESSION['Usuario'] = $row['user'];
 				$_SESSION['Access'] = $row['access_level'];
