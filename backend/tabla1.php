@@ -101,7 +101,7 @@ if (@!$_SESSION['Usuario']) {
     }
     if (!isset($_GET["upload"]) && $_SESSION['Access'] == 1) {
 
-      echo '<a href="tabla1.php?insert=1">Ingresar nuevo registro</a>';
+      echo '<a href="tabla1.php?insert=1&forma=1">Ingresar nuevo registro</a>';
     }
 
 
