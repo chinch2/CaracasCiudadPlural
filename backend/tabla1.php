@@ -21,7 +21,7 @@ if (@!$_SESSION['Usuario']) {
 
   if (isset($_GET["del"])) {
 
-    $sql = "DELETE FROM sistema.news WHERE id = '" . $_GET["id"] . "';";
+    $sql = "DELETE FROM news WHERE id = '" . $_GET["id"] . "';";
 
     if ($conn->query($sql) === TRUE) {
 
@@ -46,24 +46,40 @@ if (@!$_SESSION['Usuario']) {
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+    echo '<form action= "tabla1.php" method="post">
+    Imagen:<br>
+    <input type="text" name="image" value="Nueva Imagen">
+    <br>
+    Titulo:<br>
+    <input type="text" name="title" value="Nuevo Titulo">
+    <br>
+    <input type="hidden" name="id" value="' . $last_id . '">
+    Link:<br>
+    <input type="text" name="link" value="Nuevo Link">
+    <br>
+    <input type="submit" name="forma" value="Submit">
+   </form>';
+
   }
 
   if (isset($_POST["forma"])) {
-    $sql = "UPDATE sistema.news SET   image = '{$_POST["image"]}', title = '{$_POST["title"]}', link = '{$_POST["link"]}' WHERE id = '{$_POST["id"]}'";
+    $sql = "UPDATE news SET   image = '{$_POST["image"]}', title = '{$_POST["title"]}', link = '{$_POST["link"]}' WHERE id = '{$_POST["id"]}'";
     $result = $conn->query($sql);
     unset($_GET["id"]);
   }
-  ?>
-  <a href="tablas.php">Volver</a>
-  <table border="1">
-    <tr>
-      <th>Imagen</th>
-      <th>Titulo</th>
-      <th>Link</th>
-      <th>Fecha De Publicacion</th>
-    </tr>
-    <?php
-    $sql = "SELECT * FROM sistema.news";
+if (isset($_GET["insert"])){
+}else {
+  echo "<a href=\"tablas.php\">Volver</a>
+    <table border=\"1\">
+      <tr>
+        <th>Imagen</th>
+        <th>Titulo</th>
+        <th>Link</th>
+        <th>Fecha De Publicacion</th>
+      </tr>";
+
+    $sql = "SELECT * FROM news";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
@@ -83,8 +99,8 @@ if (@!$_SESSION['Usuario']) {
     }
 
     echo "</table><br><br>";
-
-    if (count($campo)) {
+  }
+    if (count($campo) && !isset($_GET["insert"])) {
       echo '<form action= "tabla1.php" method="post">
   Imagen:<br>
   <input type="text" name="image" value="' . $campo["image"] . '">
@@ -99,9 +115,9 @@ if (@!$_SESSION['Usuario']) {
   <input type="submit" name="forma" value="Submit">
  </form>';
     }
-    if (!isset($_GET["upload"]) && $_SESSION['Access'] == 1) {
+    if (!isset($_GET["insert"]) && $_SESSION['Access'] == 1) {
 
-      echo '<a href="tabla1.php?insert=1&forma=1">Ingresar nuevo registro</a>';
+      echo '<a href="tabla1.php?insert=1">Ingresar nuevo registro</a>';
     }
 
 

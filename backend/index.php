@@ -32,7 +32,7 @@ if ($_SESSION['Usuario']) {
 			<th>Fecha De Publicacion</th>
 		</tr>
 		<?php
-		$sql = "SELECT * FROM sistema.news";
+		$sql = "SELECT * FROM news";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {
@@ -52,7 +52,7 @@ if ($_SESSION['Usuario']) {
 				<th>Fecha De Publicacion</th>
 			</tr>
 			<?php
-			$sql = "SELECT * FROM sistema.audios";
+			$sql = "SELECT * FROM audios";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
 				while ($row = $result->fetch_assoc()) {
@@ -71,7 +71,7 @@ if ($_SESSION['Usuario']) {
 					<th>Fecha De Publicacion</th>
 				</tr>
 				<?php
-				$sql = "SELECT * FROM sistema.flyers";
+				$sql = "SELECT * FROM flyers";
 				$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 					while ($row = $result->fetch_assoc()) {

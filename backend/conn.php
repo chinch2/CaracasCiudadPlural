@@ -2,7 +2,7 @@
 $servername = "127.0.0.1";
 $username = "josedev";
 $password = "J.2574274.j";
-$dbname = "sistema";
+$dbname = "sistemaCCP";
 
 
 // Create connection

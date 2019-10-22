@@ -22,7 +22,7 @@ if (@!$_SESSION['Usuario']) {
 
   if (isset($_GET["del"])) {
 
-    $sql = "DELETE FROM sistema.audios WHERE id = '" . $_GET["id"] . "';";
+    $sql = "DELETE FROM audios WHERE id = '" . $_GET["id"] . "';";
 
     if ($conn->query($sql) === TRUE) {
 
@@ -50,7 +50,7 @@ if (@!$_SESSION['Usuario']) {
   }
 
   if (isset($_POST["forma"])) {
-    $sql = "UPDATE sistema.audios SET  link = '{$_POST["link"]}', part = '{$_POST["part"]}' WHERE id = '{$_POST["id"]}';";
+    $sql = "UPDATE audios SET  link = '{$_POST["link"]}', part = '{$_POST["part"]}' WHERE id = '{$_POST["id"]}';";
     $result = $conn->query($sql);
     unset($_GET["id"]);
   }
@@ -63,7 +63,7 @@ if (@!$_SESSION['Usuario']) {
       <th>Fecha de Publicacion</th>
     </tr>
     <?php
-    $sql = "SELECT * FROM sistema.audios";
+    $sql = "SELECT * FROM audios";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
